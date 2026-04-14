@@ -4,6 +4,8 @@ from src.model_training import train_model, save_model
 from src.evaluate import evaluate_model
 from src.predict import predict_failure
 from src.utils import save_predictions, save_metrics
+from src.visualize import plot_temperature, plot_failure_distribution
+
 import pandas as pd
 
 def main():
@@ -40,6 +42,12 @@ def main():
 
     # 10. Save predictions
     save_predictions(results, "outputs/predictions.csv")
+
+    # 11. Visualizations
+    plot_temperature(df)
+    plot_failure_distribution(df)
+
+    print("✅ Project executed successfully!")
 
 if __name__ == "__main__":
     main()
