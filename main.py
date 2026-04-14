@@ -1,5 +1,9 @@
 from src.data_preprocessing import load_data, clean_data, save_processed_data
 from src.feature_engineering import create_features
+from src.model_training import train_model, save_model
+from src.evaluate import evaluate_model
+from src.predict import predict_failure
+from src.utils import save_predictions, save_metrics
 import pandas as pd
 
 def main():
@@ -18,6 +22,24 @@ def main():
 
     # 4. Save Processed Data
     save_processed_data(df, "data/processed/nasa_processed.csv")
+
+     # 5. Train Model
+    model, X_test, y_test = train_model(df)
+
+    # 6. Save model
+    save_model(model, "models/model.pkl")
+
+    # 7. Evaluate
+    metrics, y_pred = evaluate_model(model, X_test, y_test)
+
+    # 8. Save metrics
+    save_metrics(metrics, "outputs/metrics.txt")
+
+    # 9. Predict
+    results = predict_failure(model, X_test)
+
+    # 10. Save predictions
+    save_predictions(results, "outputs/predictions.csv")
 
 if __name__ == "__main__":
     main()
