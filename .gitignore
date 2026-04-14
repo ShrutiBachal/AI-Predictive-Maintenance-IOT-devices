@@ -9,6 +9,9 @@ ENV/
 __pycache__/
 *.pyc
 
+# Dataset
+data/
+
 # Environment variables
 .env
 
