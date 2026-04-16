@@ -88,9 +88,7 @@ This system is widely used in:
 ## 🏗️ Architecture
 
 ![Architecture](assets/architecture.png)
-```
 
----
 
 ## ⚙️ Installation
 
@@ -166,22 +164,15 @@ The system performs:
 
 ### 📊 Temperature Trend
 
-(Add image here)
-
-```markdown
 ![Temperature Trend](images/plots/temperature.png)
-```
 
----
 
 ### 📊 Failure Distribution
 
-```markdown
 ![Failure Distribution](images/plots/failure_distribution.png)
-```
+
 
 ---
-
 ## 🧠 Learning Outcomes
 
 Through this project, I learned:
